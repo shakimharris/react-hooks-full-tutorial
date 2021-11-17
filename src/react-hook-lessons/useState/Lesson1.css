@@ -1,0 +1,10 @@
+.button {
+    padding: 10px;
+    margin: 0px;
+    display: flex;
+    background-color: deepskyblue;
+}
+
+.h1 {
+    text-shadow: 10px;
+}
