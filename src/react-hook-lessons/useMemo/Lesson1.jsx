@@ -1,4 +1,4 @@
-import React , { useState } from 'react'; 
+import React , { useState, useMemo } from 'react'; 
 
 const thisFunctionWillSlowDownOurApp = (num1, num2) => {
     for(let i=0; i < 10000; i++){
@@ -11,7 +11,9 @@ export default function MemoExample(){
     const [numToAdd, setNumToAdd] = useState(0);
     const [num2, setNum2] = useState(0);
 
-    const addedValue = thisFunctionWillSlowDownOurApp(numToAdd);
+    const addedValue = useMemo(() => {
+        return thisFunctionWillSlowDownOurApp(numToAdd, num2);
+        }, [numToAdd, num2]);
     return (
         <div className="App">
             <input type="number" 
