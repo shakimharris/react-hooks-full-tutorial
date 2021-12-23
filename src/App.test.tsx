@@ -1,9 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import InputForm from './InputForm';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+test('render an input form', () => {
+  render(<InputForm />);
 });
+
+test('this component has an email', () => {
+  let email = "james@yahoo.com";
+  expect(email).toBe(email);
+})
