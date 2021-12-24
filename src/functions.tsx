@@ -1,31 +1,28 @@
 import React from 'react';
 
-function addOrderTotal(total:number, tax:number): number {
+function orderTotal(total: number, tax: number): number {
     return total + tax;
 }
 
+// Add types to a constant function 
 
-export default addOrderTotal;
+const cartTotal: string(amountSpent: string, numberOfItems: string): string => `${amountSpent} + ${numberOfItems}`;
 
-// Const function typing
+// Union types
 
-export const addedStrings = (str1: string, str2: string): string => `${str1} + ${str2}`;
+export const creditCards = (creditCardNumber: number, expirationDate: string | number): string => `${creditCardNumber} ${expirationDate}`
 
-// Union function typing
+// Void types
 
-export const creditCards = (creditCardnumber: string, expirationDate: string | number): string => `${creditCardnumber} ${expirationDate}`; 
+export const creditCardsUsed = (creditCardNumber: number, expirationDate: string | number): void => 
+console.log(creditCardNumber, expirationDate);
 
-// Void function typing 
-export const printCreditCards = (creditCardnumber: string, expirationDate: string | number): void => 
-console.log(creditCardnumber, expirationDate);
+// Promises
 
-// Promise function typing
+export const fetchCreditCardData = (url: string): Promise<string> => Promise.resolve('data from `${url}`);
 
-export const fetchCreditCard = (url: string): Promise<string> => Promise.resolve(`Data from ${url}`);
+// Rest parameters
 
-// Rest parameter typing 
-
-function welcomeMessage(welcome: string, ...names: string[]): string {
-    return `${welcome} ${names.join(" ")}`;
+const welcomeMessage(Welcome: string, ...names: string[]): string {
+    return `${Welcome} ${names.join("")}`
 }
-
